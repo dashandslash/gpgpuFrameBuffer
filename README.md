@@ -1,2 +1,2 @@
 # gpgpuFrameBuffer
-ping pong technique using a single fbo with two attachments
+ping pong technique for Cinder using a single fbo with two attachments
