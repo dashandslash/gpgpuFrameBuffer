@@ -93,7 +93,6 @@ void gpGpuFrameBuffer::unbindTexture()
 
 void gpGpuFrameBuffer::bindBuffer()
 {
-    //        mWriteIndex = ( mReadIndex + 1 ) % 2;
     mFbo->bindFramebuffer();
     gl::drawBuffer( mWriteIndex );
 }
