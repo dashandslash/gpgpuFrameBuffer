@@ -20,6 +20,7 @@
 		5323E6B20EAFCA74003A9687 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5323E6B10EAFCA74003A9687 /* CoreVideo.framework */; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		8F5C34CEAF8E421A8206D04B /* CinderApp.icns in Resources */ = {isa = PBXBuildFile; fileRef = 9B4D53C6BA8447DFB01619C8 /* CinderApp.icns */; };
+		BF4793A41C219079003EC229 /* gpGpuFrameBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BF4793A21C219079003EC229 /* gpGpuFrameBuffer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,8 @@
 		88E21D4A3BBF4BB7AF339505 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Resources.h; path = ../include/Resources.h; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* gpgpuFrameBuffer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpgpuFrameBuffer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B4D53C6BA8447DFB01619C8 /* CinderApp.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = CinderApp.icns; path = ../resources/CinderApp.icns; sourceTree = "<group>"; };
-		BF4793A01C218951003EC229 /* gpGpuFrameBuffer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = gpGpuFrameBuffer.h; path = ../include/gpGpuFrameBuffer.h; sourceTree = "<group>"; };
+		BF4793A21C219079003EC229 /* gpGpuFrameBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gpGpuFrameBuffer.cpp; sourceTree = "<group>"; };
+		BF4793A31C219079003EC229 /* gpGpuFrameBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gpGpuFrameBuffer.h; sourceTree = "<group>"; };
 		DF18606ABAC84F5E96EB1AEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,6 +79,7 @@
 		080E96DDFE201D6D7F000001 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				BF4793A11C219079003EC229 /* gpgpuFrameBuffer */,
 				24F4A55E48EF49F4AC11B52C /* gpgpuFrameBufferApp.cpp */,
 			);
 			name = Source;
@@ -133,7 +136,6 @@
 		29B97315FDCFA39411CA2CEA /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				BF4793A01C218951003EC229 /* gpGpuFrameBuffer.h */,
 				88E21D4A3BBF4BB7AF339505 /* Resources.h */,
 				310D6A353F924A64B7CB10ED /* gpgpuFrameBuffer_Prefix.pch */,
 			);
@@ -156,6 +158,16 @@
 				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BF4793A11C219079003EC229 /* gpgpuFrameBuffer */ = {
+			isa = PBXGroup;
+			children = (
+				BF4793A21C219079003EC229 /* gpGpuFrameBuffer.cpp */,
+				BF4793A31C219079003EC229 /* gpGpuFrameBuffer.h */,
+			);
+			name = gpgpuFrameBuffer;
+			path = ../src/gpgpuFrameBuffer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FB0215709CB4AEFB85B9FFC /* gpgpuFrameBufferApp.cpp in Sources */,
+				BF4793A41C219079003EC229 /* gpGpuFrameBuffer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

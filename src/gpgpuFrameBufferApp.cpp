@@ -1,7 +1,7 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
-#include "gpGpuFrameBuffer.h"
+#include "gpgpuFrameBuffer/gpGpuFrameBuffer.h"
 
 #include "cinder/ImageIo.h"
 
@@ -102,6 +102,8 @@ void gpgpuFrameBufferApp::update()
     if(mMouseDown)
     {
         gl::getStockShader(gl::ShaderDef().color())->bind();
+        
+        //Red channel will host the injected force from mouse position
         gl::color( ColorAf( 1.0f, 0.0f, 0.0f, 1.0f ) );
         gl::drawSolidCircle( ( mMousePos ), 5.0f );
         gl::color( Color::white() );
@@ -117,6 +119,8 @@ void gpgpuFrameBufferApp::draw()
     gl::viewport(getWindowSize());
     gl::setMatricesWindow( getWindowSize() );
     
+    gl::enableAdditiveBlending();
+    
     //using scoped
     {
         gl::ScopedTextureBind t0(mBuffer->getTexture(), 0);
@@ -129,6 +133,10 @@ void gpgpuFrameBufferApp::draw()
         
         gl::drawSolidRect(getWindowBounds());
     }
+    
+    mBuffer->draw();
+    
+
     
 }
 
